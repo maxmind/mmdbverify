@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 
 	"github.com/oschwald/maxminddb-golang"
 )
@@ -15,16 +16,17 @@ func main() {
 
 	if *file == required {
 		flag.PrintDefaults()
-		return
+		os.Exit(1)
 	}
 
 	reader, err := maxminddb.Open(*file)
 	if err != nil {
-		fmt.Printf("Error opening file: %v\n", err)
-		return
+		fmt.Fprintf(os.Stderr, "Error opening file: %v\n", err)
+		os.Exit(1)
 	}
 
 	if err := reader.Verify(); err != nil {
-		fmt.Printf("Error verifying file: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error verifying file: %v\n", err)
+		os.Exit(1)
 	}
 }
