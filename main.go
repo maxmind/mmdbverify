@@ -1,3 +1,4 @@
+// mmdbverify verifies a MaxMind DB file to ensure that is valid.
 package main
 
 import (
