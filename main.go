@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/oschwald/maxminddb-golang"
+	"github.com/oschwald/maxminddb-golang/v2"
 )
 
 func main() {
