@@ -1,7 +1,7 @@
 module github.com/maxmind/mmdbverify
 
-go 1.24
+go 1.24.0
 
-require github.com/oschwald/maxminddb-golang/v2 v2.0.0-beta.10
+require github.com/oschwald/maxminddb-golang/v2 v2.0.0
 
-require golang.org/x/sys v0.35.0 // indirect
+require golang.org/x/sys v0.37.0 // indirect
