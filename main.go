@@ -27,7 +27,9 @@ func main() {
 	}
 
 	if err := reader.Verify(); err != nil {
+		reader.Close()
 		fmt.Fprintf(os.Stderr, "Error verifying file: %v\n", err)
 		os.Exit(1)
 	}
+	reader.Close()
 }
