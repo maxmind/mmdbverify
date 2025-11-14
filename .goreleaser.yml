@@ -1,0 +1,66 @@
+project_name: 'mmdbverify'
+version: 2
+
+before:
+  hooks:
+    - 'go mod tidy'
+
+builds:
+  - id: 'mmdbverify'
+    main: './'
+    binary: 'mmdbverify'
+    goos:
+      - 'darwin'
+      - 'linux'
+      - 'windows'
+    ignore:
+      - goos: 'darwin'
+        goarch: '386'
+      - goos: 'linux'
+        goarch: '386'
+      - goos: 'windows'
+        goarch: '386'
+
+archives:
+  - id: 'mmdbverify'
+    ids:
+      - 'mmdbverify'
+    wrap_in_directory: true
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+    files:
+      - 'LICENSE'
+      - 'README.md'
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  version_template: "{{ .Tag }}-next"
+
+changelog:
+  disable: true
+
+nfpms:
+  - id: 'mmdbverify'
+    ids:
+      - 'mmdbverify'
+    vendor: 'MaxMind, Inc.'
+    homepage: 'https://www.maxmind.com/'
+    maintainer: 'MaxMind, Inc. <support@maxmind.com>'
+    description: 'Tool to verify MaxMind MMDB database files.'
+    license: 'Apache 2.0'
+    formats:
+      - 'deb'
+      - 'rpm'
+    bindir: '/usr/bin'
+    contents:
+      - src: 'LICENSE'
+        dst: '/usr/share/doc/mmdbverify/LICENSE'
+      - src: 'README.md'
+        dst: '/usr/share/doc/mmdbverify/README.md'
+
+release:
+  target_commitish: "{{ .FullCommit }}"
