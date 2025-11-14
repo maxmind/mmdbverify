@@ -101,16 +101,21 @@ go build
 ## Usage
 
 ```bash
-# Verify a database file
+# Verify a database file (silent on success)
 mmdbverify -file /path/to/GeoIP2-City.mmdb
 
-# Success (no output, exit code 0)
+# Verify with verbose output
+mmdbverify -file /path/to/GeoIP2-City.mmdb -verbose
+# Verifying /path/to/GeoIP2-City.mmdb...
+# /path/to/GeoIP2-City.mmdb is valid
+
+# Check exit code
 echo $?
 # 0
 
-# Failure (error printed to stderr, non-zero exit code)
+# Failure (error printed to stderr with filename, non-zero exit code)
 mmdbverify -file /path/to/invalid.mmdb
-# Error verifying file: invalid database metadata
+# Error verifying /path/to/invalid.mmdb: invalid database metadata
 echo $?
 # 1
 ```
@@ -118,38 +123,34 @@ echo $?
 ### Command-Line Flags
 
 - `-file` - **Required.** Path to the MaxMind DB file to verify
+- `-verbose` - Print verification status messages
 
 ## Examples
 
 ### Verify GeoIP2 Database
 
 ```bash
+# Silent mode (default)
 mmdbverify -file GeoIP2-City.mmdb
-```
 
-### Verify in a Script
-
-```bash
-#!/bin/bash
-if mmdbverify -file GeoIP2-Country.mmdb; then
-    echo "Database is valid"
-else
-    echo "Database validation failed"
-    exit 1
-fi
+# Verbose mode
+mmdbverify -file GeoIP2-City.mmdb -verbose
 ```
 
 ### Verify Multiple Databases
 
 ```bash
+# Verify all MMDB files with verbose output
 for db in *.mmdb; do
-    echo "Verifying $db..."
-    if mmdbverify -file "$db"; then
-        echo "✓ $db is valid"
-    else
-        echo "✗ $db is invalid"
-    fi
+    mmdbverify -file "$db" -verbose
 done
+```
+
+### Use in CI/CD Pipeline
+
+```bash
+# Exit immediately if validation fails
+mmdbverify -file GeoIP2-Country.mmdb || exit 1
 ```
 
 ## Use Cases
