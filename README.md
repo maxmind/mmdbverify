@@ -177,7 +177,7 @@ mmdbverify -file GeoIP2-Country.mmdb || exit 1
 
 ## License
 
-Copyright (c) 2015-2025 by MaxMind, Inc.
+Copyright (c) 2015-2026 by MaxMind, Inc.
 
 This software is licensed under the Apache License, Version 2.0. See
 [LICENSE](LICENSE) for details.
