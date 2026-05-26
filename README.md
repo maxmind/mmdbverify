@@ -3,7 +3,7 @@
 A command-line utility to verify the validity of MaxMind DB (MMDB) files.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Go Version](https://img.shields.io/badge/Go-1.24%2B-00ADD8?logo=go)](https://golang.org)
+[![Go Version](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)](https://golang.org)
 
 ## Overview
 
@@ -164,7 +164,7 @@ mmdbverify -file GeoIP2-Country.mmdb || exit 1
 
 ## Requirements
 
-- Go 1.24 or later (for building from source)
+- Go 1.25 or later (for building from source)
 - MaxMind DB files to verify (GeoIP2, GeoLite2, or custom MMDB files)
 
 ## Related Tools
@@ -177,7 +177,7 @@ mmdbverify -file GeoIP2-Country.mmdb || exit 1
 
 ## License
 
-Copyright (c) 2015-2025 by MaxMind, Inc.
+Copyright (c) 2015-2026 by MaxMind, Inc.
 
 This software is licensed under the Apache License, Version 2.0. See
 [LICENSE](LICENSE) for details.
