@@ -127,7 +127,7 @@ echo $?
 
 ## Examples
 
-### Verify GeoIP2 Database
+### Verify GeoIP Database
 
 ```bash
 # Silent mode (default)
@@ -165,7 +165,7 @@ mmdbverify -file GeoIP2-Country.mmdb || exit 1
 ## Requirements
 
 - Go 1.25 or later (for building from source)
-- MaxMind DB files to verify (GeoIP2, GeoLite2, or custom MMDB files)
+- MaxMind DB files to verify (GeoIP, GeoLite, or custom MMDB files)
 
 ## Related Tools
 
