@@ -2,8 +2,8 @@
 
 A command-line utility to verify the validity of MaxMind DB (MMDB) files.
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Go Version](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)](https://golang.org)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/license/Apache-2.0)
+[![Go Version](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)](https://go.dev/)
 
 ## Overview
 
@@ -186,4 +186,4 @@ This software is licensed under the Apache License, Version 2.0. See
 
 - **Issues:** [GitHub Issues](https://github.com/maxmind/mmdbverify/issues)
 - **MaxMind Support:**
-  [https://support.maxmind.com](https://support.maxmind.com)
+  [https://support.maxmind.com/knowledge-base](https://support.maxmind.com/knowledge-base)
