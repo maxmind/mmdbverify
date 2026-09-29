@@ -409,10 +409,6 @@ linters:
         # Prohibits defer (*os.File).Close, which we allow when reading from file.
         - G307
 
-        # We use md5 in geoipupdate
-        - G401
-        - G501
-
         # no longer relevant with 1.22
         - G601
 
@@ -505,6 +501,11 @@ linters:
           arguments:
             - literal
           disabled: false
+
+        - name: enforce-switch-style
+          # We have quite a few switches without defaults and most of them
+          # are not problematic.
+          arguments: ["allowNoDefault"]
 
         - name: file-header
           disabled: true
