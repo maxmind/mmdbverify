@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0]
+
+### Security
+
+- The release binaries are built with the current Go release. The 1.1.0 binaries
+  used Go 1.27.1, which has known standard-library vulnerabilities.
+
+### Changed
+
+- Updated `github.com/oschwald/maxminddb-golang/v2` from v2.7.0 to v2.9.0.
+- mmdbverify now rejects a database with invalid UTF-8 in a map value that a
+  duplicate map key overwrites. It now checks every encoded string in the data
+  and metadata sections. Version 1.1.0 accepted these databases.
+
 ## [1.1.0] - 2026-09-29
 
 ### Changed
@@ -38,6 +52,7 @@ and this project adheres to
 - Clear error messages to stderr
 - Zero exit code on success, non-zero on failure
 
-[unreleased]: https://github.com/maxmind/mmdbverify/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/maxmind/mmdbverify/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/maxmind/mmdbverify/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/maxmind/mmdbverify/releases/tag/v1.1.0
 [1.0.0]: https://github.com/maxmind/mmdbverify/releases/tag/v1.0.0
