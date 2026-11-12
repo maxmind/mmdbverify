@@ -738,6 +738,7 @@ formatters:
       module-path: github.com/maxmind/mmdbverify
       extra:
         group-params: true
+        clothe-returns: true
 
     goimports:
       local-prefixes:
