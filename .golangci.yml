@@ -133,7 +133,7 @@ linters:
 
   settings:
     # Please note that we only use depguard for blocking packages and
-    # gomodguard for blocking modules.
+    # gomodguard_v2 for blocking modules.
     depguard:
       rules:
         main:
