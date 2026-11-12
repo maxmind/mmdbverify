@@ -133,7 +133,7 @@ linters:
 
   settings:
     # Please note that we only use depguard for blocking packages and
-    # gomodguard for blocking modules.
+    # gomodguard_v2 for blocking modules.
     depguard:
       rules:
         main:
@@ -337,9 +337,6 @@ linters:
           recommendations:
             - github.com/google/uuid
         - module: github.com/satori/go.uuid
-          recommendations:
-            - github.com/google/uuid
-        - module: github.com/google/uuid
           recommendations:
             - github.com/google/uuid
         - module: github.com/lib/pq
@@ -738,6 +735,7 @@ formatters:
       module-path: github.com/maxmind/mmdbverify
       extra:
         group-params: true
+        clothe-returns: true
 
     goimports:
       local-prefixes:
