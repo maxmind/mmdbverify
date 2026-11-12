@@ -9,6 +9,8 @@ builds:
   - id: 'mmdbverify'
     env:
       - 'CGO_ENABLED=0'
+    flags:
+      - '-trimpath'
     main: './'
     binary: 'mmdbverify'
     goos:
